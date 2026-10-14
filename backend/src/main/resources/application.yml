@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: tebm-v3-backend
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/tebm}
+    username: ${DB_USERNAME:tebm}
+    password: ${DB_PASSWORD:tebm_dev}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: false
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never

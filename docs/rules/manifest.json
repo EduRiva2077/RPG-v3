@@ -1,0 +1,106 @@
+[
+  {
+    "path": "INTEGRATION.md",
+    "bytes": 851
+  },
+  {
+    "path": "README.md",
+    "bytes": 2131
+  },
+  {
+    "path": "content/deuses-e-divindades-homebrew.md",
+    "bytes": 104903
+  },
+  {
+    "path": "content/equipamentos.md",
+    "bytes": 70614
+  },
+  {
+    "path": "content/itens-magicos-e-tesouros.md",
+    "bytes": 383305
+  },
+  {
+    "path": "content/lista-de-magias-suplementar.md",
+    "bytes": 439161
+  },
+  {
+    "path": "content/magias-phb.md",
+    "bytes": 421077
+  },
+  {
+    "path": "content/monstros.md",
+    "bytes": 1296334
+  },
+  {
+    "path": "engine/00-prioridade-e-conflitos.md",
+    "bytes": 1010
+  },
+  {
+    "path": "engine/01-resolucao-basica.md",
+    "bytes": 1681
+  },
+  {
+    "path": "engine/02-movimento-e-distancia.md",
+    "bytes": 1856
+  },
+  {
+    "path": "engine/03-combate.md",
+    "bytes": 2222
+  },
+  {
+    "path": "engine/04-conjuracao-e-magia.md",
+    "bytes": 1912
+  },
+  {
+    "path": "engine/05-condicoes.md",
+    "bytes": 7240
+  },
+  {
+    "path": "engine/06-adjudicacao-do-mestre.md",
+    "bytes": 1291
+  },
+  {
+    "path": "reports/extracao-e-pendencias.md",
+    "bytes": 1829
+  },
+  {
+    "path": "reports/mapa-das-fontes.md",
+    "bytes": 583
+  },
+  {
+    "path": "schemas/formato-de-regra.md",
+    "bytes": 668
+  },
+  {
+    "path": "schemas/personagem-5e-2014.md",
+    "bytes": 1593
+  },
+  {
+    "path": "source/deuses-e-divindades-homebrew.md",
+    "bytes": 104903
+  },
+  {
+    "path": "source/ficha-2024-referencia.md",
+    "bytes": 2044
+  },
+  {
+    "path": "source/ficha-5e-2014.md",
+    "bytes": 2112
+  },
+  {
+    "path": "source/guia-do-mestre-5e-2014.md",
+    "bytes": 1284989
+  },
+  {
+    "path": "source/lista-de-magias-suplementar.md",
+    "bytes": 439161
+  },
+  {
+    "path": "source/livro-do-jogador-5e-2014.md",
+    "bytes": 1353830
+  },
+  {
+    "path": "source/manual-dos-monstros-5e-2014.md",
+    "bytes": 1312263
+  }
+]

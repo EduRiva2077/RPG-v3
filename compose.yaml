@@ -1,0 +1,57 @@
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────
+  database:
+    image: postgres:17-alpine
+    container_name: tebm-v3-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-tebm}
+      POSTGRES_USER: ${POSTGRES_USER:-tebm}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-tebm_dev}
+    volumes:
+      - tebm_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-tebm} -d ${POSTGRES_DB:-tebm}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Spring Boot Backend ─────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+    container_name: tebm-v3-backend
+    restart: unless-stopped
+    environment:
+      DB_URL: jdbc:postgresql://database:5432/${POSTGRES_DB:-tebm}
+      DB_USERNAME: ${POSTGRES_USER:-tebm}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-tebm_dev}
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/api/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  # ── Angular Frontend ────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+    container_name: tebm-v3-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "4200:80"
+
+volumes:
+  tebm_postgres_data:
