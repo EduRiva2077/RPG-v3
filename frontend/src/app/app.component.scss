@@ -1,0 +1,75 @@
+:host {
+    display: block;
+    min-height: 100vh;
+}
+
+.bootstrap-screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at center, #211216 0%, #100c0d 42%, #080708 100%);
+    color: #ece7e4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.brand {
+    text-align: center;
+    padding: 2rem;
+}
+
+.sigil {
+    width: 42px;
+    height: 2px;
+    margin: 0 auto 1.5rem;
+    background: #7c2635;
+    box-shadow: 0 0 18px rgba(124, 38, 53, 0.45);
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.subtitle {
+    margin: 0.6rem 0 2.5rem;
+    color: #92898b;
+    font-size: 1rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #9a9293;
+    font-size: 0.9rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #777;
+}
+
+.status.online {
+    color: #b8cdbd;
+
+    .dot {
+        background: #79a985;
+        box-shadow: 0 0 10px rgba(121, 169, 133, 0.7);
+    }
+}
+
+.status.offline {
+    color: #c99b9b;
+
+    .dot {
+        background: #a44a4a;
+        box-shadow: 0 0 10px rgba(164, 74, 74, 0.6);
+    }
+}
